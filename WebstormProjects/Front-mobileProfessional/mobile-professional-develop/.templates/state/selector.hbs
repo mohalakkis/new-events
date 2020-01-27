@@ -1,0 +1,8 @@
+import { createSelector } from 'reselect';
+
+export const {{name}}ModuleSelector = state => state.{{name}};
+
+export const selectListed{{capitalize name}} = createSelector(
+  {{name}}ModuleSelector,
+  subState => subState.{{name}},
+);

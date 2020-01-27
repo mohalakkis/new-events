@@ -1,0 +1,19 @@
+import {
+  LIST_FAILURE,
+  LIST_REQUEST,
+  LIST_SUCCESS,
+} from '../constants/{{name}}';
+
+export const makeListRequest = () => ({
+  type: LIST_REQUEST,
+});
+
+export const makeListSuccess = payload => ({
+  type: LIST_SUCCESS,
+  payload,
+});
+
+export const makeListFailure = payload => ({
+  type: LIST_FAILURE,
+  payload,
+});

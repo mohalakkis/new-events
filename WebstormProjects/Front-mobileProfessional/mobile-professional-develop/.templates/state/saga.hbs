@@ -1,0 +1,21 @@
+import axios from 'axios';
+import { takeEvery, put, call } from 'redux-saga/effects';
+import { LIST_REQUEST } from '../constants/{{name}}';
+import {
+  makeListFailure,
+  makeListSuccess,
+} from '../actions/{{name}}';
+
+function* listWatcher() {
+  try {
+    const response = yield call(axios.get, '{{name}}');
+
+    yield put(makeListSuccess(response.data));
+  } catch (e) {
+    yield put(makeListFailure(e));
+  }
+}
+
+export default function* {{name}}Saga() {
+  yield takeEvery(LIST_REQUEST, listWatcher);
+}

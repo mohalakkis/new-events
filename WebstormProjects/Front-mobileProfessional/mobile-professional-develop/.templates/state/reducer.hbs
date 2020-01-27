@@ -1,0 +1,19 @@
+import { LIST_SUCCESS } from '../constants/{{name}}';
+
+const initialState = {
+  {{name}}: [],
+};
+
+const {{name}}Reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case LIST_SUCCESS:
+      return {
+        ...state,
+        {{name}}: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export default {{name}}Reducer;
